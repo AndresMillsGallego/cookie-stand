@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border: solid 1rem midnightblue;
+  margin: 2rem;
+  padding: 2rem;
+}
+header {
+  font-size: 4rem;
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: solid .5rem midnightblue;
+}
+div {
+  border: solid .5rem cornflowerblue;
+  width: 15%;
+  padding: 2rem;
+  display:inline-table;
+  margin: 2rem;
+}
+
+li {
+  margin: 1rem;
+  list-style-type: disc;
+}
+ul :last-child {
+  font-size: 1.5rem;
+  color:red;
+}
+
+footer {
+  font-size: 2rem;
+  text-align: center;
+}
+
+div:hover {
+  background-color:aliceblue;
+  color: crimson;
+  font-weight: bold;
+}
+
+li:hover {
+  border-bottom: solid .25rem red;
+  color: black;
+  font-weight: bolder;
+  padding: .5rem;
+}
