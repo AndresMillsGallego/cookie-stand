@@ -14,6 +14,7 @@ let seattleStore = {
   seattleStorePerHour: function() {
     let ul = document.createElement('ul');
     let p = document.createElement('p');
+    p.classList.add('text');
     p.textContent = 'Seattle Store';
     ul.appendChild(p);
     for (let i = 0; i < storeHours.length; i++) {
@@ -24,6 +25,7 @@ let seattleStore = {
       this.customersPerHourArray.push(salesMessage);
       this.cookieTotal += Math.round(hourlyCookieTotal);
       let li = document.createElement('li');
+      li.classList.add('data');
       li.textContent = salesMessage;
       ul.appendChild(li);
     }
@@ -48,6 +50,7 @@ let tokyoStore = {
   tokyoStorePerHour: function() {
     let ul = document.createElement('ul');
     let p = document.createElement('p');
+    p.classList.add('text');
     p.textContent = 'Tokyo Store';
     ul.appendChild(p);
     for (let i = 0; i < storeHours.length; i++) {
@@ -58,6 +61,7 @@ let tokyoStore = {
       this.customersPerHourArray.push(salesMessage);
       this.cookieTotal += Math.round(hourlyCookieTotal);
       let li = document.createElement('li');
+      li.classList.add('data');
       li.textContent = salesMessage;
       ul.appendChild(li);
     }
@@ -82,6 +86,7 @@ let dubaiStore = {
   dubaiStorePerHour: function() {
     let ul = document.createElement('ul');
     let p = document.createElement('p');
+    p.classList.add('text');
     p.textContent = 'Dubai Store';
     ul.appendChild(p);
     for (let i = 0; i < storeHours.length; i++) {
@@ -92,6 +97,7 @@ let dubaiStore = {
       this.customersPerHourArray.push(salesMessage);
       this.cookieTotal += Math.round(hourlyCookieTotal);
       let li = document.createElement('li');
+      li.classList.add('data');
       li.textContent = salesMessage;
       ul.appendChild(li);
     }
@@ -116,6 +122,7 @@ let parisStore = {
   parisStorePerHour: function() {
     let ul = document.createElement('ul');
     let p = document.createElement('p');
+    p.classList.add('text');
     p.textContent = 'Paris Store';
     ul.appendChild(p);
     for (let i = 0; i < storeHours.length; i++) {
@@ -126,6 +133,7 @@ let parisStore = {
       this.customersPerHourArray.push(salesMessage);
       this.cookieTotal += Math.round(hourlyCookieTotal);
       let li = document.createElement('li');
+      li.classList.add('data');
       li.textContent = salesMessage;
       ul.appendChild(li);
     }
@@ -150,6 +158,7 @@ let limaStore = {
   limaStorePerHour: function() {
     let ul = document.createElement('ul');
     let p = document.createElement('p');
+    p.classList.add('text');
     p.textContent = 'Lima Store';
     ul.appendChild(p);
     for (let i = 0; i < storeHours.length; i++) {
@@ -160,6 +169,7 @@ let limaStore = {
       this.customersPerHourArray.push(salesMessage);
       this.cookieTotal += Math.round(hourlyCookieTotal);
       let li = document.createElement('li');
+      li.classList.add('data');
       li.textContent = salesMessage;
       ul.appendChild(li);
     }

@@ -7,7 +7,6 @@ body {
   background-color: whitesmoke;
   margin: 2rem;
   padding: 2rem;
-  
 }
 
 .flex-container {
@@ -19,13 +18,13 @@ body {
 
 .data {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color: darkgreen;
+  color:indigo;
   align-items: center;
 }
 
 .text {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: darkmagenta;
+  color:blue;
 }
 
 .highlights {
@@ -46,11 +45,14 @@ header {
   border-bottom: solid .5rem midnightblue;
 }
 
+h1 {
+  margin-bottom: 2rem;
+  font-size: 6rem;
+}
 div {
   border: solid .5rem cornflowerblue;
   padding: 1rem;
   margin: 1rem;
-  
 }
 
 p {
@@ -64,14 +66,15 @@ p {
 }
 
 #main-header {
-  font-size: 4rem;
+  font-size: 6rem;
+  word-spacing: 12rem;
 }
 
 li {
   margin: 1rem;
   padding: .25rem;
   list-style-type: disc;
-  text-indent: 1rem;
+  text-indent: 1.5rem;
 }
 ul :last-child {
   font-size: 1.5rem;
@@ -85,16 +88,22 @@ footer {
 }
 
 div:hover {
-  background-color:aliceblue;
+  background-color:azure;
   color: crimson;
   font-weight: bold;
 }
 
 li:hover {
-  border-bottom: solid .15rem red;
-  color: black;
+  border-bottom: solid .15rem darkblue;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  color:hotpink;
   font-weight: bolder;
   padding: .5rem;
+}
+
+ul :last-child:hover {
+  font-size: 1.5rem;
 }
 
 .main-div {
