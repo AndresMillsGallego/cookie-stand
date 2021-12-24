@@ -20,10 +20,10 @@ let seattleStore = {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
-      let hourlyCookieTotal = hourlyCustomer * this.avgCookiePerCust;
-      let salesMessage = `${storeHours[i]}: ${Math.round(hourlyCookieTotal)} cookies`;
+      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+      let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
       this.customersPerHourArray.push(salesMessage);
-      this.cookieTotal += Math.round(hourlyCookieTotal);
+      this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
       li.textContent = salesMessage;
@@ -56,10 +56,10 @@ let tokyoStore = {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
-      let hourlyCookieTotal = hourlyCustomer * this.avgCookiePerCust;
-      let salesMessage = `${storeHours[i]}: ${Math.round(hourlyCookieTotal)} cookies`;
+      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+      let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
       this.customersPerHourArray.push(salesMessage);
-      this.cookieTotal += Math.round(hourlyCookieTotal);
+      this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
       li.textContent = salesMessage;
@@ -92,10 +92,10 @@ let dubaiStore = {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
-      let hourlyCookieTotal = hourlyCustomer * this.avgCookiePerCust;
-      let salesMessage = `${storeHours[i]}: ${Math.round(hourlyCookieTotal)} cookies`;
+      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+      let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
       this.customersPerHourArray.push(salesMessage);
-      this.cookieTotal += Math.round(hourlyCookieTotal);
+      this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
       li.textContent = salesMessage;
@@ -128,10 +128,10 @@ let parisStore = {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
-      let hourlyCookieTotal = hourlyCustomer * this.avgCookiePerCust;
-      let salesMessage = `${storeHours[i]}: ${Math.round(hourlyCookieTotal)} cookies`;
+      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+      let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
       this.customersPerHourArray.push(salesMessage);
-      this.cookieTotal += Math.round(hourlyCookieTotal);
+      this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
       li.textContent = salesMessage;
@@ -164,10 +164,10 @@ let limaStore = {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
-      let hourlyCookieTotal = hourlyCustomer * this.avgCookiePerCust;
-      let salesMessage = `${storeHours[i]}: ${Math.round(hourlyCookieTotal)} cookies`;
+      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+      let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
       this.customersPerHourArray.push(salesMessage);
-      this.cookieTotal += Math.round(hourlyCookieTotal);
+      this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
       li.textContent = salesMessage;
