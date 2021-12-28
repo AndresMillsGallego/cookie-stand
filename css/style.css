@@ -112,3 +112,8 @@ ul :last-child:hover {
   border: solid .5rem cornflowerblue;
   display: inline-flex;
 }
+
+td {
+  border: solid .25rem cornflowerblue;
+  padding: 1rem;
+}

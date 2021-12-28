@@ -4,6 +4,7 @@ console.log('Bonjour!');
 let storeHours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm'];
 
 const seattleStoreContainer = document.getElementById('seattleStore');
+const seattleTable = document.querySelector('table tbody');
 
 let seattleStore = {
   customersPerHourArray: [],
@@ -22,7 +23,7 @@ let seattleStore = {
       //console.log(hourlyCustomer);//To check the method is working
       let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
       let salesMessage = `${storeHours[i]}: ${hourlyCookieTotal} cookies`;
-      this.customersPerHourArray.push(salesMessage);
+      this.customersPerHourArray.push(hourlyCookieTotal);
       this.cookieTotal += hourlyCookieTotal;
       let li = document.createElement('li');
       li.classList.add('data');
@@ -38,6 +39,24 @@ let seattleStore = {
   }
 };
 seattleStore.seattleStorePerHour();
+
+seattleStore.renderTable = function() {
+  let tr1 = document.createElement('tr');
+  seattleTable.appendChild(tr1);
+  for (let i = 0; i < storeHours.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = storeHours[i];
+    tr1.appendChild(td);
+  }
+  let tr2 = document.createElement('tr');
+  seattleTable.appendChild(tr2);
+  for (let i = 0; i < this.customersPerHourArray.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = this.customersPerHourArray[i];
+    tr2.appendChild(td);
+  }
+};
+seattleStore.renderTable();
 
 const tokyoStoreContainer = document.getElementById('tokyoStore');
 
