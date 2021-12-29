@@ -18,8 +18,7 @@ body {
 
 .data {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color:indigo;
-  align-items: center;
+  color: darkblue;
 }
 
 .text {
@@ -29,6 +28,8 @@ body {
 
 .highlights {
   font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 1.25rem;
   color:hotpink;
 }
 
@@ -70,21 +71,24 @@ p {
   word-spacing: 12rem;
 }
 
-li {
-  margin: 1rem;
-  padding: .25rem;
-  list-style-type: disc;
-  text-indent: 1.5rem;
-}
-ul :last-child {
-  font-size: 1.5rem;
-  color:salmon;
-  font-weight: bold;
-}
-
 footer {
   font-size: 2rem;
   text-align: center;
+  margin-top: 2rem;
+}
+
+th {
+  font-size: 1.25rem;
+  font-family: 'Roboto Mono', monospace;
+  color: crimson;
+  font-weight: bold;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+td:last-child {
+  color: hotpink;
+  font-size: 1.25rem;
 }
 
 div:hover {
@@ -93,17 +97,22 @@ div:hover {
   font-weight: bold;
 }
 
-li:hover {
+tbody th:hover,
+tfoot th:hover {
   border-bottom: solid .15rem darkblue;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.25rem;
-  color:hotpink;
-  font-weight: bolder;
   padding: .5rem;
 }
 
-ul :last-child:hover {
+tr td:hover {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  background-color: azure;
+}
+
+tfoot td:hover,
+td:last-child:hover {
   font-size: 1.5rem;
+  color: deeppink;
 }
 
 .main-div {

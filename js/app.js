@@ -3,8 +3,8 @@
 console.log('Anyone else think "salmon cookies" sound gross?');
 
 let storeHours = ['6:00am','7:00am','8:00am','9:00am','10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm'];
-
 let storeArray = [];
+let hourlyTotalsArray = [];
 
 const storeTable = document.querySelector('table tbody');
 
@@ -33,6 +33,8 @@ function Store(name,min, max, avg) {
     tr.appendChild(th);
     for (let i = 0; i < this.totalCookiesPerHour.length; i++) {
       let td = document.createElement('td');
+      td.classList.add('data');
+      td.setAttribute('id','storeData');
       td.textContent = this.totalCookiesPerHour[i];
       tr.appendChild(td);
     }
@@ -71,19 +73,37 @@ let tableFooter = function() {
   let th = document.createElement('th');
   tr.appendChild(th);
   th.textContent = 'Totals';
+  for (let j =0; j < storeHours.length; j++) {
+    let hourlyTotal = 0;
+    for (let i =0; i < storeArray.length; i++) {
+      hourlyTotal += storeArray[i].totalCookiesPerHour[j];
+    } hourlyTotalsArray.push(hourlyTotal);
+  }
   for (let i = 0; i < storeHours.length; i++) {
     let td = document.createElement('td');
+    td.classList.add('highlights');
+    td.textContent = hourlyTotalsArray[i];
     tr.appendChild(td);
   }
+  let grandCookieTotal = 0;
+  for (let i = 0; i < storeArray.length; i++) {
+    grandCookieTotal += storeArray[i].cookieTotal;
+  }
+  let td = document.createElement('td');
+  td.classList.add('highlights');
+  td.textContent = grandCookieTotal;
+  tr.appendChild(td);
 };
+
 
 // Everything gets called and rendered with the code below
 tableHeader();
+
 for (let i = 0; i < storeArray.length; i++) {
   storeArray[i].renderTable();
 }
-tableFooter();
 
+tableFooter();
 
 
 // const seattleStoreContainer = document.getElementById('seattleStore');
