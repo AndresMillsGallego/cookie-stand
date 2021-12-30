@@ -9,6 +9,7 @@ body {
   background-color:ghostwhite;
   margin: 2rem;
   padding: 2rem;
+  border-radius: .5rem;
 }
 
 .data {
@@ -88,6 +89,9 @@ button {
   margin-right: 4rem;
   margin-top: 6rem;
   margin-bottom: 2rem;
+  border-radius: .5rem;
+  background-color:azure;
+  box-shadow: 5px 10px 15px midnightblue;
 }
 
 a {
@@ -118,6 +122,8 @@ h1 {
   margin-bottom: 2rem;
   border: solid .5rem cornflowerblue;
   background-color:azure;
+  border-radius: .5rem;
+  box-shadow: 10px 15px 20px midnightblue;
 }
 
 #table1, #table2 {
@@ -126,6 +132,8 @@ h1 {
   padding: 2rem;
   margin: 2rem;
   background-color:azure;
+  border-radius: .5rem;
+  box-shadow: 5px 10px 15px midnightblue;
 }
 
 th {
@@ -203,8 +211,9 @@ td {
   padding: 3rem;
   margin-bottom: 2rem;
   border: solid .5rem cornflowerblue;
+  border-radius: .5rem;
   background-color:azure;
-  flex: 100%;
+  box-shadow: 10px 10px 20px midnightblue;
 }
 
 h1 {
@@ -267,13 +276,15 @@ article {
   padding: 2rem;
   margin: 2rem;
   flex: 100%;
+  border-radius: .5rem;
+  box-shadow: 10px 15px 20px midnightblue;
 }
 
 #div2 p{
   border: none;
   font-size: 3rem;
   font-weight: normal;
-  color:mediumblue;
+  color:rgb(2, 2, 168);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.25;
 }
