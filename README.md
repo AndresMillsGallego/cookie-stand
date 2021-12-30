@@ -14,3 +14,9 @@ This project went quite well I think.  I have been wanting to work with the DOM 
 I don't think I have any questions on this topic just yet, though I am eager to continue working with it to gain more experience. One observation that I made during the 2nd lab was the potential benefits to using several methods in a given object as opposed to just one.  I had already written my code by then using just one method so I left it like that, but I will likely change that up moving forward.  
 
 I finished the bulk of the project the first lab, then spent the majority of the 2nd lab working with CSS.  CSS really can be a time sink, but a fun one!  Since this lab was so new to me I didn't really have an idea of how long it would take me, but having completed it I think I finished it in a good amount of time.  
+
+**Lab 07**
+
+I thouroughly enjoyed this lab.  Practicing more with CSS as well as when to hardcode HTML and when to use JS was a great exercise.  
+
+I definitely need more practice making new branches and commiting often.  
