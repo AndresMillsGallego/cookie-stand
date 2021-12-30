@@ -65,6 +65,38 @@ h1 {
   margin-bottom: 2rem;
   font-size: 6rem;
 }
+
+h2 {
+  font-size: 3rem;
+  color:navy;
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border: dashed .5rem salmon;
+}
+
+h3 {
+  font-size: 3rem;
+  color:navy;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+#div1 li {
+  color:navy;
+  font-family: 'Roboto Mono', monospace;
+  text-indent: 5rem;
+}
+
+#div1 ul {
+  list-style-type:square;
+}
+
+#div3 {
+  display: block;
+}
+
 div {
   border: solid .5rem cornflowerblue;
   padding: 2rem;
@@ -160,8 +192,9 @@ td {
 }
 
 .main-div {
-  width: px;
-  height: 400px;
+  width: max-content;
+  height: max-content;
   border: solid .5rem cornflowerblue;
-  display:inline-flexbox;
+  display:flex;
+  justify-content:space-evenly;
 }
