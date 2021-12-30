@@ -100,9 +100,15 @@ div:hover {
 tbody th:hover,
 tfoot th:hover {
   border-bottom: solid .15rem darkblue;
+  border-top: solid .15rem darkblue;
   padding: .5rem;
 }
 
+thead th:hover {
+  border-left: solid .15rem darkblue;
+  border-right: solid .15rem darkblue;
+  pad: .5rem;
+}
 tr td:hover {
   font-size: 1.25rem;
   font-weight: bolder;

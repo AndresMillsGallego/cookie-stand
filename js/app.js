@@ -7,6 +7,7 @@ let storeArray = [];
 let hourlyTotalsArray = [];
 
 const storeTable = document.querySelector('table tbody');
+const tossersTable = document.getElementById('cookieTossers');
 
 function Store(name,min, max, avg) {
   this.storeName = name;
@@ -15,10 +16,13 @@ function Store(name,min, max, avg) {
   this.avgCookiePerCust = avg;
   this.totalCookiesPerHour = [];
   this.cookieTotal = 0;
+  this.customersPerHour = [];
+  this.cookieTossersPerHour = [];
   this.randomCustPerHour = function() {
     for (let i = 0; i < storeHours.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
       //console.log(hourlyCustomer);//To check the method is working
+      this.customersPerHour.push(hourlyCustomer);
       let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
       this.totalCookiesPerHour.push(hourlyCookieTotal);
       this.cookieTotal += hourlyCookieTotal;
@@ -34,13 +38,27 @@ function Store(name,min, max, avg) {
     for (let i = 0; i < this.totalCookiesPerHour.length; i++) {
       let td = document.createElement('td');
       td.classList.add('data');
-      td.setAttribute('id','storeData');
       td.textContent = this.totalCookiesPerHour[i];
       tr.appendChild(td);
     }
     let td = document.createElement('td');
     td.textContent = this.cookieTotal;
     tr.appendChild(td);
+  };
+  this.tossersNeeded = function() {
+    for (let i = 0; i < this.customersPerHour.length; i++) {
+      let cookieTossers = 2;
+      if (this.customersPerHour[i] > 40 && this.customersPerHour[i] < 60) {
+        cookieTossers += 1;
+        this.cookieTossersPerHour.push(cookieTossers);
+      } else if ( this.customersPerHour[i] > 60) {
+        let largeCustomerFormula = Math.ceil(this.customersPerHour[i] / 20) - 2;
+        cookieTossers += largeCustomerFormula;
+        this.cookieTossersPerHour.push(cookieTossers);
+      } else {
+        this.cookieTossersPerHour.push(cookieTossers);
+      }
+    }
   };
   storeArray.push(this);
 }
@@ -50,10 +68,10 @@ let dubaiStore = new Store('Dubai',11,38,3.7);
 let parisStore = new Store('Paris',20,38,2.3);
 let limaStore = new Store('Lima',2,16,4.6);
 
-let tableHeader = function() {
-  const tableHead = document.querySelector('table thead');
+let tableHeader = function(id) {
+  const tHead = document.getElementById(id);
   let tr = document.createElement('tr');
-  tableHead.appendChild(tr);
+  tHead.appendChild(tr);
   let th = document.createElement('th');
   tr.appendChild(th);
   for (let i = 0; i < storeHours.length; i++) {
@@ -97,13 +115,21 @@ let tableFooter = function() {
 
 
 // Everything gets called and rendered with the code below
-tableHeader();
+
+tableHeader('salesData');
 
 for (let i = 0; i < storeArray.length; i++) {
   storeArray[i].renderTable();
 }
 
 tableFooter();
+
+tableHeader('cookieTossers');
+
+
+// seattleStore.tossersNeeded();
+// console.log(seattleStore.cookieTossersPerHour);
+// console.log(seattleStore.customersPerHour);
 
 
 // const seattleStoreContainer = document.getElementById('seattleStore');
