@@ -4,12 +4,11 @@ console.log('Anyone else think "salmon cookies" sound gross?');
 
 let storeHoursAndTotal = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
 let storeHoursOnly = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
-let controlCurvePercentage = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4];
+let controlCurvePercentage = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4];//This has one less than on the assignment since the listed array had 15 values and our method only creates 14.
 let storeArray = [];
 let hourlyTotalsArray = [];
 
 const storeTable = document.querySelector('table tbody');
-const tossersHeader = document.getElementById('cookieTossers');
 const tossersBody = document.getElementById('t2Body');
 
 function Store(name, min, max, avg) {
@@ -46,6 +45,7 @@ function Store(name, min, max, avg) {
       tr.appendChild(td);
     }
   };
+
   this.tossersNeeded = function () {
     for (let i = 0; i < this.customersPerHour.length; i++) {
       let cookieTossers = 2;
@@ -63,6 +63,7 @@ function Store(name, min, max, avg) {
   };
   storeArray.push(this);
 }
+
 let seattleStore = new Store('Seattle', 23, 65, 6.3);
 let tokyoStore = new Store('Tokyo', 3, 24, 1.2);
 let dubaiStore = new Store('Dubai', 11, 38, 3.7);
@@ -102,7 +103,6 @@ let tableFooter = function () {
     tr.appendChild(td);
   }
 };
-
 
 // Everything gets called and rendered with the code below
 
