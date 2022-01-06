@@ -7,6 +7,7 @@
 body {
   border: solid 1rem midnightblue;
   background-color:ghostwhite;
+  color: navy;
   margin: 2rem;
   padding: 2rem;
   border-radius: .5rem;
@@ -52,7 +53,6 @@ li {
 
 header {
   font-size: 4rem;
-  color:navy;
   margin: 2rem;
   padding-bottom: 3rem;
   text-align: center;
@@ -61,7 +61,6 @@ header {
 
 p {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color:navy;
   text-align: center;
   padding: 1rem;
   margin: 1rem;
@@ -88,30 +87,11 @@ button {
 }
 
 a {
+  color: navy;
   border: none;
-  color: midnightblue;
   text-decoration: none;
 }
 
-footer a {
-  transition: all 1s;
-}
-footer a:hover {
-  border: solid .25rem cornflowerblue;
-  border-radius: .25rem;
-  padding: .5rem;
-  color: deeppink;
-  background-color: gold;
-  font-weight: bolder;
-  font-size: 110%;
-}
-
-button:hover,
-header a:hover {
-  background-color: lightskyblue;
-  color: crimson;
-  cursor: pointer;
-}
 
 /* Styling for the Sales page */
 
@@ -209,6 +189,15 @@ nav {
   justify-content: space-evenly;
 }
 
+a:hover {
+  color: deeppink;
+  font-size: 2.5rem;
+}
+
+button:hover {
+  background-color: lightblue;
+  font-size: 2.5rem;
+}
 h1 {
   margin-bottom: 3rem;
   font-size: 6rem;
@@ -216,7 +205,6 @@ h1 {
 
 h2 {
   font-size: 4rem;
-  color:navy;
   margin: 2rem;  
   border-bottom: double .5rem darksalmon;
   padding-bottom: 2rem;
@@ -224,7 +212,6 @@ h2 {
 
 h3 {
   font-size: 4rem;
-  color:navy;
   margin: 2rem;
   text-align: center;
   border-bottom: double .5rem darksalmon;
@@ -240,22 +227,22 @@ h4 {
 }
 article {
   font-size: 2rem;
-  color:navy;
   text-align: center;
 }
 
 #div1 li {
-  color:navy;
   font-family: 'Roboto Mono', monospace;
   text-align: center;
   font-size: 2.5rem;
 }
 
 /* This code doesn't actually link anywhere, but the idea is for each list item to be hotlinked to that store's own site */
-#div1 li:hover { 
+/* Now it works! */
+
+#div1 a:hover { 
   cursor: pointer;
   font-size: 3rem;
-  color:crimson;
+  color: deeppink;
   font-weight: bolder;
 }
 
@@ -280,7 +267,6 @@ article {
   border: none;
   font-size: 2rem;
   font-weight: normal;
-  color:rgb(2, 2, 168);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.25;
 }
@@ -323,7 +309,12 @@ article {
 
 #email:hover {
   color: deeppink;
+  font-size: 1.5rem;
   font-weight: bolder;
+}
+
+footer a:hover {
+  color: deeppink;
 }
 
 #Seattle {

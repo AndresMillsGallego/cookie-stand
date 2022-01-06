@@ -13,7 +13,7 @@
 
 <body id="main-body">
   <header id="main-header">
-    <h1>Pat's Salmon Cookies</h1>
+    <h1 id="h1">Pat's Salmon Cookies</h1>
     <img src="img/salmon.png" alt="Pat's Salmon" width="400">
     <img src="img/salmon.png" alt="Pat's Salmon" width="400">
     <img src="img/salmon.png" alt="Pat's Salmon" width="400">
@@ -68,8 +68,10 @@
     </div>
   </main>
   <footer>
+    <button><a href="#main-body" onclick="changeStyle()">Eat Me</a></button>
     <a href="sales.html">Sales</a>
     <a href="#main-header">Back to the Top</a>
+    <button onclick="parent.location='index.html'">Drink Me</button>
   </footer>
   <script type="text/javascript" src="js/app2.js"></script>
 </body>

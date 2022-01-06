@@ -41,3 +41,23 @@ let storeHours = function () {
   thirdDiv.appendChild(fish);
 };
 storeHours();
+
+let changeStyle = function() {
+  document.body.style.backgroundColor = 'midnightBlue';
+  document.getElementById('main-body').style.color = 'yellow';
+  document.getElementById('main-body').style.borderColor = 'salmon';
+  document.getElementById('main-header').style.borderColor = 'salmon';
+  document.getElementById('div2').style.backgroundColor = 'black';
+  document.getElementById('h1').style.backgroundColor = 'black';
+  document.getElementById('line').style.borderColor = 'salmon';
+  let links = document.getElementsByTagName('a');
+  for (let i = 0; i < links.length; i++) {
+    links[i].style.color = 'lime';
+  }
+  let buttons = document.getElementsByTagName('button');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].style.backgroundColor = 'black';
+    buttons[i].style.color = 'lime';
+  }
+
+};
