@@ -31,10 +31,9 @@ body {
 
 .flex-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
-  min-width: 0;
 }
 
 ul {
@@ -50,18 +49,18 @@ li {
   font-weight: bolder;
   padding: 1rem;
 }
+
 header {
   font-size: 4rem;
   color:navy;
   margin: 2rem;
-  padding: 2rem;
+  padding-bottom: 3rem;
   text-align: center;
   border-bottom: solid .5rem midnightblue;
 }
 
 p {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   color:navy;
   text-align: center;
   padding: 1rem;
@@ -69,14 +68,13 @@ p {
 }
 
 footer {
+  display: flex;
+  justify-content: space-evenly;
   font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
 }
 
-footer a {
-  margin-left: 8rem;
-}
 button {
   border: solid cornflowerblue;
   border-radius: .25rem;
@@ -84,11 +82,6 @@ button {
   padding: 1rem;
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  justify-content: space-between;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  margin-top: 6rem;
-  margin-bottom: 2rem;
   border-radius: .5rem;
   background-color:azure;
   box-shadow: 5px 10px 15px midnightblue;
@@ -100,10 +93,17 @@ a {
   text-decoration: none;
 }
 
+footer a {
+  transition: all 1s;
+}
 footer a:hover {
+  border: solid .25rem cornflowerblue;
+  border-radius: .25rem;
+  padding: .5rem;
   color: deeppink;
+  background-color: gold;
   font-weight: bolder;
-  font-size: 125%;
+  font-size: 110%;
 }
 
 button:hover,
@@ -127,7 +127,6 @@ h1 {
 }
 
 #table1, #table2 {
-  display: table;
   border: solid .5rem cornflowerblue;
   padding: 2rem;
   margin: 2rem;
@@ -181,9 +180,9 @@ td:last-child:hover {
 }
 
 table {
+  table-layout: fixed;
   padding-top: 1rem;
   word-break: break-all;
-  min-width: 0;
 }
 
 td {
@@ -205,19 +204,13 @@ td {
 
 /* Styling for the Main page */
 
-#main-header {
-  font-size: 8rem;
-  word-spacing: 12rem;
-  padding: 3rem;
-  margin-bottom: 2rem;
-  border: solid .5rem cornflowerblue;
-  border-radius: .5rem;
-  background-color:azure;
-  box-shadow: 10px 10px 20px midnightblue;
+nav {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 6rem;
 }
 
@@ -267,7 +260,7 @@ article {
 }
 
 #div1 ul {
-  list-style-image: url(/img/salmonBullet.png);
+  list-style-image: url(/img/chinook.jpg);
 }
 
 #div2 {
@@ -275,14 +268,17 @@ article {
   background-color:papayawhip;
   padding: 2rem;
   margin: 2rem;
-  flex: 100%;
   border-radius: .5rem;
   box-shadow: 10px 15px 20px midnightblue;
 }
-
+.family {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 #div2 p{
   border: none;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
   color:rgb(2, 2, 168);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -297,13 +293,19 @@ article {
   margin-bottom: 2rem;
 }
 #div3 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+#div3 img {
+  width: 200px;
+  margin-left: 30%;
+  margin-top: 3rem;
 }
 
 #line {
   border: solid .25rem midnightblue;
   height: 550px;
-  margin-right: 8rem;
 }
 
 #days {
@@ -316,9 +318,35 @@ article {
 
 #div4 p {
   border: none;
+  font-size: 1.5rem;
 }
 
 #email:hover {
   color: deeppink;
   font-weight: bolder;
+}
+
+#Seattle {
+  background: url(/img/Seattle1.jpg);
+  background-size: 100%;
+}
+
+#Dubai {
+  background: url(/img/Dubai.jpg);
+  background-size: 100%;
+}
+
+#Tokyo {
+  background: url(/img/Tokyo.jpg);
+  background-size: 100%;
+}
+
+#Paris {
+  background: url(/img/Paris.jpg);
+  background-size: 100%;
+}
+
+#Lima {
+  background: url(/img/Lima.jpg);
+  background-size: 100%;
 }

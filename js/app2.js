@@ -4,6 +4,7 @@ console.log('Salut!');
 let storeHoursOnly = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let locations = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
 
+//Code below renders store locations and makes them links to each store's page. As the array gets updated so does the function!
 let renderLocations = function () {
   const firstDiv = document.getElementById('div1');
   let ul = document.createElement('ul');
@@ -12,8 +13,12 @@ let renderLocations = function () {
   h2.textContent = 'Our Locations';
   ul.appendChild(h2);
   for (let i = 0; i < locations.length; i++) {
+    let link = `${locations[i].toLocaleLowerCase()}.html`;
     let li = document.createElement('li');
-    li.textContent = locations[i];
+    let a = document.createElement('a');
+    a.setAttribute('href',link);
+    a.textContent = locations[i];
+    li.appendChild(a);
     ul.appendChild(li);
   }
 };
@@ -31,5 +36,8 @@ let storeHours = function () {
   let hours = document.createElement('article');
   hours.textContent = `${storeHoursOnly[0]} - ${storeHoursOnly[13]}`;
   thirdDiv.appendChild(hours);
+  let fish = document.createElement('img');
+  fish.src = 'img/fish.jpg';
+  thirdDiv.appendChild(fish);
 };
 storeHours();
