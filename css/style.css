@@ -68,7 +68,7 @@ p {
 
 footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
@@ -241,7 +241,7 @@ article {
 
 #div1 a:hover { 
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: deeppink;
   font-weight: bolder;
 }
@@ -315,29 +315,4 @@ article {
 
 footer a:hover {
   color: deeppink;
-}
-
-#Seattle {
-  background: url(/img/Seattle1.jpg);
-  background-size: 100%;
-}
-
-#Dubai {
-  background: url(/img/Dubai.jpg);
-  background-size: 100%;
-}
-
-#Tokyo {
-  background: url(/img/Tokyo.jpg);
-  background-size: 100%;
-}
-
-#Paris {
-  background: url(/img/Paris.jpg);
-  background-size: 100%;
-}
-
-#Lima {
-  background: url(/img/Lima.jpg);
-  background-size: 100%;
 }

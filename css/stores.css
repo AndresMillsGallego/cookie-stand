@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.stores {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color:black;
+  color: salmon;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+a {
+  font-size: 3rem;
+  color: chartreuse;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#Seattle {
+  background: url(/img/Seattle1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#Dubai {
+  background: url(/img/Dubai.jpg);
+  background-size: 100%;
+}
+
+#Tokyo {
+  background: url(/img/Tokyo.jpg);
+  background-size: 100%;
+}
+
+#Paris {
+  background: url(/img/Paris.jpg);
+  background-size: 100%;
+}
+
+#Lima {
+  background: url(/img/Lima.jpg);
+  background-size: 100%;
+}

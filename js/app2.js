@@ -42,6 +42,7 @@ let storeHours = function () {
 };
 storeHours();
 
+// eslint-disable-next-line no-unused-vars
 let changeStyle = function() {
   document.body.style.backgroundColor = 'midnightBlue';
   document.getElementById('main-body').style.color = 'yellow';
@@ -59,5 +60,4 @@ let changeStyle = function() {
     buttons[i].style.backgroundColor = 'black';
     buttons[i].style.color = 'lime';
   }
-
 };
