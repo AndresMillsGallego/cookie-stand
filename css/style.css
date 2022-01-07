@@ -79,6 +79,7 @@ button {
   border-radius: .25rem;
   background-color:lightgray;
   padding: 1rem;
+  color: navy;
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: .5rem;
@@ -241,7 +242,7 @@ article {
 
 #div1 a:hover { 
   cursor: pointer;
-  font-size: 2.6rem;
+  font-size: 2.75rem;
   color: deeppink;
   font-weight: bolder;
 }
@@ -313,6 +314,20 @@ article {
   font-weight: bolder;
 }
 
-footer a:hover {
+footer a:hover,
+footer button:hover {
   color: deeppink;
+}
+
+.Alice,
+.Alice a {
+  transition: all 4s;
+}
+
+.Alice:hover,
+.Alice a:hover {
+  transform: rotate(360deg);
+  background-color: black;
+  color: yellow;
+  cursor: pointer;
 }
