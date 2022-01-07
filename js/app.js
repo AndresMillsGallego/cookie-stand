@@ -115,3 +115,4 @@ for (let i = 0; i < storeArray.length; i++) {
 }
 
 tableFooter();
+

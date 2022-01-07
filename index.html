@@ -12,22 +12,28 @@
 </head>
 
 <body id="main-body">
-  <header>
-    <p id="main-header">Pat's Salmon Cookies</p>
-    <img src="img/salmon.png" alt="Pat's Salmon" width="600" height="200">
-    <img src="img/salmon.png" alt="Pat's Salmon" width="600" height="200">
-    <img src="img/salmon.png" alt="Pat's Salmon" width="600" height="200">
-    <nav>
-      <button><a href="#div1">Locations</a></button>
-      <button><a href="#div3">Hours</a></button>
-      <button><a href="#div2">About Pat's</a></button>
-      <button><a href="#div4">Contact</a></button>
-    </nav>
-  </header>
-  <main class="flex-container">
+  <header id="main-header">
+    <h1 id="h1">Pat's Salmon Cookies</h1>
+    <img src="img/salmon.png" alt="Pat's Salmon" width="400">
+    <img src="img/salmon.png" alt="Pat's Salmon" width="400">
+    <img src="img/salmon.png" alt="Pat's Salmon" width="400">
+   </header>
+   <nav>
+    <button><a href="#div1">Locations</a></button>
+    <button><a href="#div3">Hours</a></button>
+    <button><a href="store.html">Store</a></button>
+    <button><a href="#div2">About Pat's</a></button>
+    <button><a href="#div4">Contact</a></button>
+  </nav>
+   <main class="flex-container">
     <div id="div1">
     </div>
     <div id="div2">
+      <section class="family">
+      <img src="img/cutter.jpeg" alt="Cutter" width="200px">
+      <img src="img/family.jpg" alt="Family" width="500px">
+      <img src="img/frosted-cookie.jpg" alt="Cookie" width="200px">
+    </section>
       <p>Welcome to Pat’s Salmon Cookies! We are so glad that you found us and decided to visit our site. We got our
         start over 30 years ago when our founder, Pat, accidentally mixed some smoked salmon into his batch of holiday
         cookies! Thank goodness he decided to try them before tossing them out! The rest is history, so they say, and an
@@ -63,8 +69,11 @@
     </div>
   </main>
   <footer>
+    <button class="Alice"><a href="#main-body" onclick="changeStyle()">Eat Me</a></button>
     <a href="sales.html">Sales</a>
+    <a href="order-processing.html">Orders</a>
     <a href="#main-header">Back to the Top</a>
+    <button class="Alice" onclick="parent.location='index.html'">Drink Me</button>
   </footer>
   <script type="text/javascript" src="js/app2.js"></script>
 </body>

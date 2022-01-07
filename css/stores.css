@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+.stores {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color:black;
+  color: salmon;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+a {
+  font-size: 3rem;
+  color: chartreuse;
+}
+section {
+  margin-left: 60%;
+  padding-bottom: 30%;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: rgb(10, 8, 8)
+}
+
+div {
+  margin-top: 2rem;
+  transition: all 1s;
+}
+
+div:hover {
+  background-color: black;
+  color: chartreuse;
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+}
+
+#Seattle {
+  background: url(/img/Seattle1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#Dubai {
+  background: url(/img/Dubai.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#Tokyo {
+  background: url(/img/Tokyo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#Tokyo div,
+#Tokyo h1 {
+  color:gold
+}
+
+#Paris {
+  background: url(/img/Paris.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#Paris section {
+  margin-left: 47.5%;
+}
+#Paris div,
+#Paris h1{
+  color:firebrick
+}
+
+#Lima {
+  background: url(/img/Lima.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#Lima section {
+  margin-left: 30%;
+}
