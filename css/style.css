@@ -96,6 +96,53 @@ a {
 
 /* Styling for the Sales page */
 
+form {
+  width: 960px;
+}
+fieldset {
+  border: .5rem solid cornflowerblue;
+  border-radius: .5rem;
+  font-size: 2rem;
+  margin: 4rem;
+  padding: 2rem;
+  display: block;
+}
+
+#formHeader {
+  font-size: 3rem;
+  text-align: center;
+  color: crimson;
+}
+
+.labels {
+  display: block;
+  text-align: center;
+}
+input {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 75%;
+  padding: 1rem;
+  border: 2px solid midnightblue;
+  border-radius: .25rem;
+  font-size: 1rem;
+  color: crimson;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+fieldset > button {
+  width: fit-content;
+  background-color: darkblue;
+  color: yellow;
+  margin: 1rem;
+  margin-top: 2rem;
+  padding: .5rem;
+  margin-left: 33%;
+}
+
 h1 {
   font-size: 8rem;
   word-spacing: 12rem;
@@ -237,46 +284,6 @@ article {
   font-size: 2.5rem;
 }
 
-form {
-  width: 960px;
-}
-fieldset {
-  border: .5rem solid cornflowerblue;
-  border-radius: .5rem;
-  font-size: 2rem;
-  margin: 4rem;
-  padding: 2rem;
-  display: block;
-}
-
-#formHeader {
-  font-size: 3rem;
-  text-align: center;
-  color: crimson;
-}
-
-input {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width: 50%;
-  padding: 1rem;
-  border: 2px solid midnightblue;
-  border-radius: .25rem;
-  font-size: 1rem;
-  color: crimson;
-  font-weight: bold;
-}
-
-fieldset > button {
-  width: fit-content;
-  background-color: darkblue;
-  color: yellow;
-  margin: 1rem;
-  margin-top: 2rem;
-  padding: .5rem;
-  margin-left: 33%;
-}
 /* This code doesn't actually link anywhere, but the idea is for each list item to be hotlinked to that store's own site */
 /* Now it works! */
 

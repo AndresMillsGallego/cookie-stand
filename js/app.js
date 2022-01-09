@@ -80,21 +80,22 @@ let addNewStore = function(event) {
     minCust,
     maxCust,
     avgCookie);
-  for (let i = 0; i < storeArray.length; i++) {
-    if (newStore.storeName.toLowerCase() === storeArray[i].storeName.toLowerCase()) {
-      storeArray.splice(i,1);
-      document.getElementById('salesTable').deleteRow(i+1);
-      document.getElementById('tossersTable').deleteRow(i+1);
-      break;
-    }
-  }
+
+  // for (let i = 0; i < storeArray.length; i++) {
+  //   if (newStore.storeName.toLowerCase() === storeArray[i].storeName.toLowerCase()) {
+  //     storeArray.splice(i,1);
+  //     document.getElementById('salesTable').deleteRow(i+1);
+  //     document.getElementById('tossersTable').deleteRow(i+1);
+  //     break;
+  //   }
+  // }
   newStore.renderTable(storeTable, newStore.totalCookiesPerHour);
   newStore.tossersNeeded();
   newStore.renderTable(tossersBody,newStore.cookieTossersPerHour);
   hourlyTotalsArray = [];
   document.getElementById('salesTable').deleteRow(-1);
   tableFooter('salesTotals');
-  // console.log(newStore);
+  console.log(newStore);
 };
 
 let tableHeader = function (id, array) {
@@ -144,6 +145,5 @@ for (let i = 0; i < storeArray.length; i++) {
 
 tableFooter('salesTotals');
 console.log(storeArray);
-
 form.addEventListener('submit',addNewStore);
 
