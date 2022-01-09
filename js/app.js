@@ -81,9 +81,10 @@ let addNewStore = function(event) {
     maxCust,
     avgCookie);
   for (let i = 0; i < storeArray.length; i++) {
-    if (newStore.storeName === storeArray[i].storeName) {
-      console.log(i);
+    if (newStore.storeName.toLowerCase() === storeArray[i].storeName.toLowerCase()) {
+      storeArray.splice(i,1);
       document.getElementById('salesTable').deleteRow(i+1);
+      document.getElementById('tossersTable').deleteRow(i+1);
       break;
     }
   }
