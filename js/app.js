@@ -76,14 +76,24 @@ let addNewStore = function(event) {
   let minCust = +event.target.minCust.value;
   let maxCust = +event.target.maxCust.value;
   let avgCookie = +event.target.avgCookieSale.value;
-  let newStore = new Store (
-    storeName, minCust, maxCust, avgCookie);
+  let newStore = new Store (storeName,
+    minCust,
+    maxCust,
+    avgCookie);
+  for (let i = 0; i < storeArray.length; i++) {
+    if (newStore.storeName === storeArray[i].storeName) {
+      console.log(i);
+      document.getElementById('salesTable').deleteRow(i+1);
+      break;
+    }
+  }
   newStore.renderTable(storeTable, newStore.totalCookiesPerHour);
   newStore.tossersNeeded();
   newStore.renderTable(tossersBody,newStore.cookieTossersPerHour);
   hourlyTotalsArray = [];
   document.getElementById('salesTable').deleteRow(-1);
   tableFooter('salesTotals');
+  // console.log(newStore);
 };
 
 let tableHeader = function (id, array) {

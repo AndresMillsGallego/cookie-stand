@@ -23,18 +23,18 @@
   <main class="flex-container">
     <form>
       <fieldset>
-        <legend>Add a Store Location</legend>
+        <legend id="formHeader">Add a Store Location</legend>
         <label>Store Name
-          <input type="text" name="name">
+          <input type="text" placeholder="Type Name Here" name="name">
         </label>
         <label>Minimum Number of <br> Customers Per Hour
-          <input type="number" name="minCust">
+          <input type="number" placeholder="Min Value" name="minCust">
         </label>
         <label>Maximum Number of <br> Customers Per Hour
-          <input type="number" name="maxCust">
+          <input type="number" placeholder="Max Value" name="maxCust">
         </label>
         <label>Average Number of <br> Cookies Sold Per Customer
-          <input type="number" name="avgCookieSale">
+          <input type="number" placeholder="1.0" name="avgCookieSale" step="0.1">
         </label>
         <button type="submit">Add Location</button>
       </fieldset>
@@ -78,7 +78,7 @@
     <a href="#sales-header">Back to the Top</a>
   </footer>
 
-  <script type="text/javascript" src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
