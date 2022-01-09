@@ -10,6 +10,7 @@ let hourlyTotalsArray = [];
 
 const storeTable = document.querySelector('table tbody');
 const tossersBody = document.getElementById('t2Body');
+const form = document.querySelector('form');
 
 function Store(name, min, max, avg) {
   this.storeName = name;
@@ -69,6 +70,22 @@ let dubaiStore = new Store('Dubai', 11, 38, 3.7);
 let parisStore = new Store('Paris', 20, 38, 2.3);
 let limaStore = new Store('Lima', 2, 16, 4.6);
 
+let addNewStore = function(event) {
+  event.preventDefault();
+  let storeName = event.target.name.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let avgCookie = +event.target.avgCookieSale.value;
+  let newStore = new Store (
+    storeName, minCust, maxCust, avgCookie);
+  newStore.renderTable(storeTable, newStore.totalCookiesPerHour);
+  newStore.tossersNeeded();
+  newStore.renderTable(tossersBody,newStore.cookieTossersPerHour);
+  hourlyTotalsArray = [];
+  document.getElementById('salesTable').deleteRow(-1);
+  tableFooter('salesTotals');
+};
+
 let tableHeader = function (id, array) {
   const tHead = document.getElementById(id);
   let tr = document.createElement('tr');
@@ -82,8 +99,8 @@ let tableHeader = function (id, array) {
   }
 };
 
-let tableFooter = function () {
-  const tableFoot = document.querySelector('table tfoot');
+let tableFooter = function (id) {
+  const tableFoot = document.getElementById(id);
   let tr = document.createElement('tr');
   tableFoot.appendChild(tr);
   let th = document.createElement('th');
@@ -114,5 +131,8 @@ for (let i = 0; i < storeArray.length; i++) {
   storeArray[i].renderTable(tossersBody, storeArray[i].cookieTossersPerHour);
 }
 
-tableFooter();
+tableFooter('salesTotals');
+console.log(storeArray);
+
+form.addEventListener('submit',addNewStore);
 
