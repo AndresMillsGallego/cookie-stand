@@ -24,7 +24,7 @@ function Store(name, min, max, avg) {
   this.randomCustPerHour = function () {
     for (let i = 0; i < storeHoursOnly.length; i++) {
       let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
-      hourlyCustomer *= controlCurvePercentage[i];
+      hourlyCustomer * controlCurvePercentage[i];
       this.customersPerHour.push(hourlyCustomer);
       let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
       this.totalCookiesPerHour.push(hourlyCookieTotal);
@@ -35,15 +35,18 @@ function Store(name, min, max, avg) {
   this.renderTable = function (variable, array) {
     this.randomCustPerHour();
     let tr = document.createElement('tr');
+    tr.setAttribute('id', this.storeName);
     variable.appendChild(tr);
-    let th = document.createElement('th');
-    th.textContent = this.storeName;
-    tr.appendChild(th);
+    // let th = document.createElement('th');
+    // th.textContent = this.storeName;
+    // tr.appendChild(th);
+    newElement('th',this.storeName,tr);
     for (let i = 0; i < array.length; i++) {
-      let td = document.createElement('td');
-      td.classList.add('data');
-      td.textContent = array[i];
-      tr.appendChild(td);
+      // let td = document.createElement('td');
+      // td.classList.add('data');
+      // td.textContent = array[i];
+      // tr.appendChild(td);
+      newElement('td',array[i],tr);
     }
   };
   this.tossersNeeded = function () {
@@ -81,14 +84,12 @@ let addNewStore = function(event) {
     maxCust,
     avgCookie);
 
-  // for (let i = 0; i < storeArray.length; i++) {
-  //   if (newStore.storeName.toLowerCase() === storeArray[i].storeName.toLowerCase()) {
-  //     storeArray.splice(i,1);
-  //     document.getElementById('salesTable').deleteRow(i+1);
-  //     document.getElementById('tossersTable').deleteRow(i+1);
-  //     break;
-  //   }
-  // }
+  for (let i = 0; i < storeArray.length-1; i++) {
+    if (newStore.storeName.toLowerCase() === storeArray[i].storeName.toLowerCase()) {
+      document.getElementById('salesTable').deleteRow(i+1);
+      document.getElementById('tossersTable').deleteRow(i+1);
+    }
+  }
   newStore.renderTable(storeTable, newStore.totalCookiesPerHour);
   newStore.tossersNeeded();
   newStore.renderTable(tossersBody,newStore.cookieTossersPerHour);
@@ -96,6 +97,17 @@ let addNewStore = function(event) {
   document.getElementById('salesTable').deleteRow(-1);
   tableFooter('salesTotals');
   console.log(newStore);
+  form.reset();
+};
+
+let newElement = function(el,text,id) {
+  let newEl = document.createElement(el);
+  newEl.textContent = text,
+  id.appendChild(newEl);
+};
+
+let resetForm = function(){
+  form.reset();
 };
 
 let tableHeader = function (id, array) {
@@ -105,9 +117,10 @@ let tableHeader = function (id, array) {
   let th = document.createElement('th');
   tr.appendChild(th);
   for (let i = 0; i < array.length; i++) {
-    let th = document.createElement('th');
-    th.textContent = array[i];
-    tr.appendChild(th);
+    newElement('th',array[i],tr);
+    // let th = document.createElement('th');
+    // th.textContent = array[i];
+    // tr.appendChild(th);
   }
 };
 
@@ -115,9 +128,10 @@ let tableFooter = function (id) {
   const tableFoot = document.getElementById(id);
   let tr = document.createElement('tr');
   tableFoot.appendChild(tr);
-  let th = document.createElement('th');
-  tr.appendChild(th);
-  th.textContent = 'Totals';
+  // let th = document.createElement('th');
+  // tr.appendChild(th);
+  // th.textContent = 'Totals';
+  newElement('th','Totals',tr);
   for (let j = 0; j < storeHoursAndTotal.length; j++) {
     let hourlyTotal = 0;
     for (let i = 0; i < storeArray.length; i++) {
@@ -125,10 +139,11 @@ let tableFooter = function (id) {
     } hourlyTotalsArray.push(hourlyTotal);
   }
   for (let i = 0; i < storeHoursAndTotal.length; i++) {
-    let td = document.createElement('td');
-    td.classList.add('highlights');
-    td.textContent = hourlyTotalsArray[i];
-    tr.appendChild(td);
+    // let td = document.createElement('td');
+    // td.classList.add('highlights');
+    // td.textContent = hourlyTotalsArray[i];
+    // tr.appendChild(td);
+    newElement('td',hourlyTotalsArray[i],tr);
   }
 };
 
@@ -146,4 +161,5 @@ for (let i = 0; i < storeArray.length; i++) {
 tableFooter('salesTotals');
 console.log(storeArray);
 form.addEventListener('submit',addNewStore);
+form.addEventListener('reset',resetForm);
 
