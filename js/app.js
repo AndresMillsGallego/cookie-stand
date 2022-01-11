@@ -21,51 +21,97 @@ function Store(name, min, max, avg) {
   this.cookieTotal = 0;
   this.customersPerHour = [];
   this.cookieTossersPerHour = [];
-  this.randomCustPerHour = function () {
-    for (let i = 0; i < storeHoursOnly.length; i++) {
-      let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
-      hourlyCustomer * controlCurvePercentage[i];
-      this.customersPerHour.push(hourlyCustomer);
-      let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
-      this.totalCookiesPerHour.push(hourlyCookieTotal);
-      this.cookieTotal += hourlyCookieTotal;
-    }
-    this.totalCookiesPerHour.push(this.cookieTotal);
-  };
-  this.renderTable = function (variable, array) {
-    this.randomCustPerHour();
-    let tr = document.createElement('tr');
-    tr.setAttribute('id', this.storeName);
-    variable.appendChild(tr);
-    // let th = document.createElement('th');
-    // th.textContent = this.storeName;
-    // tr.appendChild(th);
-    newElement('th',this.storeName,tr);
-    for (let i = 0; i < array.length; i++) {
-      // let td = document.createElement('td');
-      // td.classList.add('data');
-      // td.textContent = array[i];
-      // tr.appendChild(td);
-      newElement('td',array[i],tr);
-    }
-  };
-  this.tossersNeeded = function () {
-    for (let i = 0; i < this.customersPerHour.length; i++) {
-      let cookieTossers = 2;
-      if (this.customersPerHour[i] > 40 && this.customersPerHour[i] < 60) {
-        cookieTossers += 1;
-        this.cookieTossersPerHour.push(cookieTossers);
-      } else if (this.customersPerHour[i] > 60) {
-        let largeCustomerFormula = Math.ceil(this.customersPerHour[i] / 20) - 2;
-        cookieTossers += largeCustomerFormula;
-        this.cookieTossersPerHour.push(cookieTossers);
-      } else {
-        this.cookieTossersPerHour.push(cookieTossers);
-      }
-    }
-  };
+  // this.randomCustPerHour = function () {
+  //   for (let i = 0; i < storeHoursOnly.length; i++) {
+  //     let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
+  //     hourlyCustomer * controlCurvePercentage[i];
+  //     this.customersPerHour.push(hourlyCustomer);
+  //     let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+  //     this.totalCookiesPerHour.push(hourlyCookieTotal);
+  //     this.cookieTotal += hourlyCookieTotal;
+  //   }
+  //   this.totalCookiesPerHour.push(this.cookieTotal);
+  // };
+  // this.renderTable = function (variable, array) {
+  //   this.randomCustPerHour();
+  //   let tr = document.createElement('tr');
+  //   tr.setAttribute('id', this.storeName);
+  //   variable.appendChild(tr);
+  //   // let th = document.createElement('th');
+  //   // th.textContent = this.storeName;
+  //   // tr.appendChild(th);
+  //   newElement('th',this.storeName,tr);
+  //   for (let i = 0; i < array.length; i++) {
+  //     // let td = document.createElement('td');
+  //     // td.classList.add('data');
+  //     // td.textContent = array[i];
+  //     // tr.appendChild(td);
+  //     newElement('td',array[i],tr);
+  //   }
+  // };
+  // this.tossersNeeded = function () {
+  //   for (let i = 0; i < this.customersPerHour.length; i++) {
+  //     let cookieTossers = 2;
+  //     if (this.customersPerHour[i] > 40 && this.customersPerHour[i] < 60) {
+  //       cookieTossers += 1;
+  //       this.cookieTossersPerHour.push(cookieTossers);
+  //     } else if (this.customersPerHour[i] > 60) {
+  //       let largeCustomerFormula = Math.ceil(this.customersPerHour[i] / 20) - 2;
+  //       cookieTossers += largeCustomerFormula;
+  //       this.cookieTossersPerHour.push(cookieTossers);
+  //     } else {
+  //       this.cookieTossersPerHour.push(cookieTossers);
+  //     }
+  //   }
+  // };
   storeArray.push(this);
 }
+
+Store.prototype.tossersNeeded = function () {
+  for (let i = 0; i < this.customersPerHour.length; i++) {
+    let cookieTossers = 2;
+    if (this.customersPerHour[i] > 40 && this.customersPerHour[i] < 60) {
+      cookieTossers += 1;
+      this.cookieTossersPerHour.push(cookieTossers);
+    } else if (this.customersPerHour[i] > 60) {
+      let largeCustomerFormula = Math.ceil(this.customersPerHour[i] / 20) - 2;
+      cookieTossers += largeCustomerFormula;
+      this.cookieTossersPerHour.push(cookieTossers);
+    } else {
+      this.cookieTossersPerHour.push(cookieTossers);
+    }
+  }
+};
+
+Store.prototype.renderTable = function (variable, array) {
+  this.randomCustPerHour();
+  let tr = document.createElement('tr');
+  tr.setAttribute('id', this.storeName);
+  variable.appendChild(tr);
+  // let th = document.createElement('th');
+  // th.textContent = this.storeName;
+  // tr.appendChild(th);
+  newElement('th',this.storeName,tr);
+  for (let i = 0; i < array.length; i++) {
+    // let td = document.createElement('td');
+    // td.classList.add('data');
+    // td.textContent = array[i];
+    // tr.appendChild(td);
+    newElement('td',array[i],tr);
+  }
+};
+
+Store.prototype.randomCustPerHour = function () {
+  for (let i = 0; i < storeHoursOnly.length; i++) {
+    let hourlyCustomer = (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
+    hourlyCustomer * controlCurvePercentage[i];
+    this.customersPerHour.push(hourlyCustomer);
+    let hourlyCookieTotal = Math.ceil(hourlyCustomer * this.avgCookiePerCust);
+    this.totalCookiesPerHour.push(hourlyCookieTotal);
+    this.cookieTotal += hourlyCookieTotal;
+  }
+  this.totalCookiesPerHour.push(this.cookieTotal);
+};
 
 let seattleStore = new Store('Seattle', 23, 65, 6.3);
 let tokyoStore = new Store('Tokyo', 3, 24, 1.2);
@@ -162,4 +208,3 @@ tableFooter('salesTotals');
 console.log(storeArray);
 form.addEventListener('submit',addNewStore);
 form.addEventListener('reset',resetForm);
-
