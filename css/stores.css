@@ -53,19 +53,19 @@ div:hover {
 }
 
 #Seattle {
-  background: url(/img/Seattle1.jpg);
+  background: url(../img/Seattle1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #Dubai {
-  background: url(/img/Dubai.jpg);
+  background: url(../img/Dubai.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #Tokyo {
-  background: url(/img/Tokyo.jpg);
+  background: url(../img/Tokyo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -75,7 +75,7 @@ div:hover {
 }
 
 #Paris {
-  background: url(/img/Paris.jpg);
+  background: url(../img/Paris.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -89,7 +89,7 @@ div:hover {
 }
 
 #Lima {
-  background: url(/img/Lima.jpg);
+  background: url(../img/Lima.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

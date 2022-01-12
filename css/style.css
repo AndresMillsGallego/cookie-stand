@@ -315,7 +315,7 @@ article {
 }
 
 #div1 ul {
-  list-style-image: url(/img/chinook.jpg);
+  list-style-image: url(../img/chinook.jpg);
 }
 
 #div2 {
